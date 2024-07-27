@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1ashaxrd7kwu"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_6nk2c"]
+
+[node name="Main" type="Control" node_paths=PackedStringArray("tap_count_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6nk2c")
+tap_count_label = NodePath("TapCount")
+
+[node name="TapCount" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_type_variation = &"HeaderLarge"
+text = "Tap count <value>"
+horizontal_alignment = 1
+
+[node name="Tapper" type="Button" parent="."]
+custom_minimum_size = Vector2(320, 240)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tap me!!!"
+
+[connection signal="pressed" from="Tapper" to="." method="_on_tapper_pressed"]
